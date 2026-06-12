@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,37 +17,34 @@
 
 body{
     font-family:Segoe UI, Arial, sans-serif;
-    background:
-    radial-gradient(circle at right bottom,
-    rgba(193,155,84,.20),
-    transparent 40%),
-    linear-gradient(90deg,#12211a,#1c3822,#30492d);
-
     color:white;
+
+    background:
+    radial-gradient(circle at bottom right,
+    rgba(199,165,90,.25),
+    transparent 40%),
+    linear-gradient(90deg,#102018,#1a3320,#31492e);
+
     min-height:100vh;
 }
 
 .container{
     max-width:1400px;
     margin:auto;
-    padding:40px;
-}
-
-.topo{
-    margin-bottom:60px;
+    padding:50px;
 }
 
 .tag{
     color:#c8a55b;
-    letter-spacing:4px;
     font-size:14px;
+    letter-spacing:4px;
     margin-bottom:20px;
 }
 
 h1{
-    font-size:64px;
-    line-height:1.1;
+    font-size:70px;
     margin-bottom:20px;
+    line-height:1.1;
 }
 
 .destaque{
@@ -54,24 +52,30 @@ h1{
 }
 
 .subtitulo{
-    color:#d6d6d6;
     font-size:24px;
+    color:#e2e2e2;
     max-width:900px;
+    margin-bottom:60px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:30px;
-    margin-top:50px;
 }
 
 .card{
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.15);
-    backdrop-filter:blur(8px);
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.12);
+
     border-radius:18px;
+
     padding:30px;
+
+    backdrop-filter:blur(8px);
+
     transition:.3s;
 }
 
@@ -83,13 +87,20 @@ h1{
 .numero{
     width:50px;
     height:50px;
+
     border-radius:50%;
+
     border:1px solid #c8a55b;
+
+    color:#c8a55b;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#c8a55b;
+
     margin-bottom:20px;
+
+    font-weight:bold;
 }
 
 .card h2{
@@ -97,19 +108,26 @@ h1{
 }
 
 .card p{
-    color:#d4d4d4;
+    color:#d8d8d8;
+    line-height:1.7;
     margin-bottom:25px;
-    line-height:1.6;
 }
 
 .botao{
+
     display:inline-block;
-    padding:12px 22px;
-    border-radius:8px;
+
     background:#c8a55b;
+
     color:#111;
-    font-weight:bold;
+
     text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    font-weight:bold;
 }
 
 .botao:hover{
@@ -117,33 +135,99 @@ h1{
 }
 
 .preview{
-    margin-top:80px;
+
+    margin-top:90px;
 }
 
 .preview h2{
+
+    margin-bottom:10px;
+}
+
+.preview p{
+
+    color:#d5d5d5;
+
     margin-bottom:30px;
 }
 
 .imagens{
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    gap:25px;
 }
 
 .imagens img{
+
     width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
     border-radius:15px;
+
     border:1px solid rgba(255,255,255,.15);
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.imagens img:hover{
+
+    transform:scale(1.02);
+
+    border-color:#c8a55b;
 }
 
 .rodape{
+
     margin-top:80px;
+
     padding-top:30px;
+
     border-top:1px solid rgba(255,255,255,.15);
-    color:#d4d4d4;
+
+    color:#d8d8d8;
 }
 
-@media(max-width:1000px){
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.95);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    cursor:pointer;
+}
+
+.modal img{
+
+    max-width:95%;
+    max-height:95%;
+
+    border-radius:12px;
+
+    box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+
+@media(max-width:1100px){
 
 .grid{
     grid-template-columns:1fr;
@@ -154,65 +238,32 @@ h1{
 }
 
 h1{
-    font-size:42px;
+    font-size:48px;
 }
 
-    <div id="modalImagem" class="modal" onclick="fecharImagem()">
-    <img id="imagemExpandida">
-</div>
-
-<script>
-
-function abrirImagem(src){
-    document.getElementById('modalImagem').style.display='flex';
-    document.getElementById('imagemExpandida').src=src;
+.container{
+    padding:25px;
 }
-
-function fecharImagem(){
-    document.getElementById('modalImagem').style.display='none';
-}
-
-</script>
 
 }
 
 </style>
 </head>
-    <div id="modalImagem" class="modal" onclick="fecharImagem()">
-    <img id="imagemExpandida">
-</div>
-
-<script>
-
-function abrirImagem(src){
-    document.getElementById('modalImagem').style.display='flex';
-    document.getElementById('imagemExpandida').src=src;
-}
-
-function fecharImagem(){
-    document.getElementById('modalImagem').style.display='none';
-}
-
-</script>
 
 <body>
 
 <div class="container">
 
-    <div class="topo">
+    <div class="tag">
+        APRESENTAÇÃO COMERCIAL B4
+    </div>
 
-        <div class="tag">
-            APRESENTAÇÃO COMERCIAL B4
-        </div>
+    <h1>
+        Plataforma <span class="destaque">Nadire</span>
+    </h1>
 
-        <h1>
-            Plataforma <span class="destaque">Nadire</span>
-        </h1>
-
-        <div class="subtitulo">
-            Segurança, Governança, Plataforma Operacional e Inteligência Artificial aplicadas à regulação de sinistros.
-        </div>
-
+    <div class="subtitulo">
+        Segurança, Governança, Plataforma Operacional e Inteligência Artificial aplicadas à regulação de sinistros.
     </div>
 
     <div class="grid">
@@ -228,7 +279,7 @@ function fecharImagem(){
             </p>
 
             <a href="bloco1_seguranca.html" class="botao">
-                Abrir Apresentação
+                Abrir apresentação
             </a>
 
         </div>
@@ -240,11 +291,11 @@ function fecharImagem(){
             <h2>Plataforma Nadire</h2>
 
             <p>
-                Arquitetura da solução, integrações, fluxos operacionais e visão corporativa.
+                Arquitetura, integrações, fluxo operacional e visão corporativa da plataforma.
             </p>
 
             <a href="bloco2_diagrama_nadire.html" class="botao">
-                Abrir Apresentação
+                Abrir apresentação
             </a>
 
         </div>
@@ -256,11 +307,11 @@ function fecharImagem(){
             <h2>Dashboard de Resultados</h2>
 
             <p>
-                Indicadores de performance, produtividade e acompanhamento operacional.
+                Indicadores, métricas operacionais e acompanhamento de performance.
             </p>
 
             <a href="KPI_dashboard_resultados.html" class="botao">
-                Abrir Dashboard
+                Abrir dashboard
             </a>
 
         </div>
@@ -269,15 +320,21 @@ function fecharImagem(){
 
     <div class="preview">
 
-        <h2>Novas Telas do Nadire 2.0</h2>
+        <h2>Prévia das Novas Telas</h2>
 
-<div class="imagens">
+        <p>
+            Clique sobre qualquer imagem para visualizar em tela cheia.
+        </p>
 
-    <img src="Print_NovoLayout_Nadire.png" onclick="abrirImagem(this.src)">
-    <img src="Print_NovoLayout2.png" onclick="abrirImagem(this.src)">
-    <img src="Print_Novolayout3.png" onclick="abrirImagem(this.src)">
+        <div class="imagens">
 
-</div>
+            <img src="Print_NovoLayout_Nadire.png" onclick="abrirImagem(this.src)">
+
+            <img src="Print_NovoLayout2.png" onclick="abrirImagem(this.src)">
+
+            <img src="Print_Novolayout3.png" onclick="abrirImagem(this.src)">
+
+        </div>
 
     </div>
 
@@ -288,6 +345,36 @@ function fecharImagem(){
     </div>
 
 </div>
+
+<div id="modalImagem" class="modal" onclick="fecharImagem()">
+
+    <img id="imagemExpandida">
+
+</div>
+
+<script>
+
+function abrirImagem(src){
+
+    document.getElementById('imagemExpandida').src = src;
+
+    document.getElementById('modalImagem').style.display = 'flex';
+}
+
+function fecharImagem(){
+
+    document.getElementById('modalImagem').style.display = 'none';
+}
+
+document.addEventListener('keydown', function(e){
+
+    if(e.key === 'Escape'){
+
+        fecharImagem();
+    }
+});
+
+</script>
 
 </body>
 </html>
