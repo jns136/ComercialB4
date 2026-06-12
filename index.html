@@ -157,10 +157,43 @@ h1{
     font-size:42px;
 }
 
+    <div id="modalImagem" class="modal" onclick="fecharImagem()">
+    <img id="imagemExpandida">
+</div>
+
+<script>
+
+function abrirImagem(src){
+    document.getElementById('modalImagem').style.display='flex';
+    document.getElementById('imagemExpandida').src=src;
+}
+
+function fecharImagem(){
+    document.getElementById('modalImagem').style.display='none';
+}
+
+</script>
+
 }
 
 </style>
 </head>
+    <div id="modalImagem" class="modal" onclick="fecharImagem()">
+    <img id="imagemExpandida">
+</div>
+
+<script>
+
+function abrirImagem(src){
+    document.getElementById('modalImagem').style.display='flex';
+    document.getElementById('imagemExpandida').src=src;
+}
+
+function fecharImagem(){
+    document.getElementById('modalImagem').style.display='none';
+}
+
+</script>
 
 <body>
 
@@ -238,13 +271,13 @@ h1{
 
         <h2>Novas Telas do Nadire 2.0</h2>
 
-        <div class="imagens">
+<div class="imagens">
 
-            <img src="Print_NovoLayout_Nadire.png">
-            <img src="Print_NovoLayout2.png">
-            <img src="Print_Novolayout3.png">
+    <img src="Print_NovoLayout_Nadire.png" onclick="abrirImagem(this.src)">
+    <img src="Print_NovoLayout2.png" onclick="abrirImagem(this.src)">
+    <img src="Print_Novolayout3.png" onclick="abrirImagem(this.src)">
 
-        </div>
+</div>
 
     </div>
 
